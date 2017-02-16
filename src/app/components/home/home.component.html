@@ -1,0 +1,8 @@
+<h1>Welcome to Ed's Spotify Music Search Service!</h1>
+<h2>Need Music?</h2>
+<p class="lead">Use ngSpotify to browse new releases and find music on Spotify</p>
+<form>
+    <div class="form-group">
+        <input type="text" [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()" class="form-control" placeholder="Search Music...">
+    </div>
+</form>
