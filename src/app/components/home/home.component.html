@@ -1,11 +1,11 @@
 <div class="jumbotron">
   <h1>Spotify Music Search Service</h1>
   <h2>Need Music?</h2>
-  <p class="lead">Use ngSpotify to browse new releases and find music on Spotify</p>
+  <p class="lead">Use ngSpotify to find your favorite music on Spotify</p>
 </div>
 <form>
-  <div class="form-group">
-    <label for="searchStr">Enter artist here:</label>
+  <div class="form-group has-success">
+    <label class="control-label" for="searchStr"><span class="bigger"> Enter artist here: </span></label>
     <input type="text" [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()" class="form-control" placeholder="Search Music...">
   </div>
 </form>
