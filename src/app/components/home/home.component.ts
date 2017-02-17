@@ -21,6 +21,6 @@ export class HomeComponent {
     }
     searchMusic() {
         this.service.searchMusic(this.searchStr)
-            .then(searchRes => this.searchRes = searchRes);    ;
+            .subscribe((res) => this.searchRes = res.artists.items)
     }
 }
