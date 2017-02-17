@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 
 import { SpotifyService } from '../../services/spotify.service';
 
+import { Artist } from '../../../Artist';
+
 @Component({
     moduleId: module.id,
     templateUrl: 'home.component.html',
@@ -12,13 +14,13 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class HomeComponent {
     searchStr: string;
+    searchRes: Artist[];
     
     constructor(private service: SpotifyService) {
 
     }
     searchMusic() {
-        this.service.searchMusic(this.searchStr).subscribe(res => {
-            console.log(res.artists.items);
-        })
+        this.service.searchMusic(this.searchStr)
+            .then(searchRes => this.searchRes = searchRes);    ;
     }
 }

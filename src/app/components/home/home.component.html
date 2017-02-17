@@ -1,4 +1,4 @@
-<h1>Welcome to Ed's Spotify Music Search Service!</h1>
+<h1>Spotify Music Search Service</h1>
 <h2>Need Music?</h2>
 <p class="lead">Use ngSpotify to browse new releases and find music on Spotify</p>
 <form>
@@ -6,3 +6,17 @@
         <input type="text" [(ngModel)]="searchStr" name="searchStr" (keyup)="searchMusic()" class="form-control" placeholder="Search Music...">
     </div>
 </form>
+<div class="jumbotron">
+    <h3>Results...</h3>
+    <div *ngIf="searchRes">
+        <div *ngFor="let res of searchRes">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="search-res well">
+                        <h4> {{res.name}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
