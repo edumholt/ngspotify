@@ -1,34 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Artist } from '../../../Artist';
 import { Album } from '../../../Album';
-
 import { SpotifyService } from '../../services/spotify.service';
 
 @Component({
   moduleId: module.id,
-  templateUrl: 'artist.component.html'
+  templateUrl: 'album.component.html'
 })
-export class ArtistComponent implements OnInit {
+export class AlbumComponent implements OnInit{
   id: string;
-  artist: Artist;
-  albums: Album[];
+  album: Album;
 
   constructor(private service: SpotifyService, private route: ActivatedRoute) {
+
   }
 
   ngOnInit() {
     this.route.params.map(params => params['id'])
       .subscribe((id) => {
-        this.service.getArtist(id)
-          .subscribe(artist => {
-            this.artist = artist;
-          })
-        
-        this.service.getAlbums(id)
-          .subscribe(albums => {
-            this.albums = albums.items;
+        this.service.getAlbum(id)
+          .subscribe(album => {
+            this.album = album;
           })
       })
   }
