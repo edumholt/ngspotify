@@ -27,7 +27,7 @@ export class SpotifyService {
   }
 
   getAlbums(artistId: string) {
-    this.albumsUrl = 'https://api.spotify.com/v1/artists/' + artistId + '/albums';
+    this.albumsUrl = 'https://api.spotify.com/v1/artists/' + artistId + '/albums/?limit=50&market=US';
     return this.http.get(this.albumsUrl)
       .map((res:Response) => res.json())
   }
